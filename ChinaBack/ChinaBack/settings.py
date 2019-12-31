@@ -42,10 +42,12 @@ INSTALLED_APPS = [
     # Installed apps
     'rest_framework',
     'django_filters',
+    'djrichtextfield',
 
     # My apps
     'Quotes',
-    'Internships'
+    'Internships',
+    'Headings'
 ]
 
 MIDDLEWARE = [
@@ -133,4 +135,16 @@ MEDIA_URL = "/media/"
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
+
+# Admin text editor
+DJRICHTEXTFIELD_CONFIG = {
+    'js': ['//tinymce.cachefly.net/4.1/tinymce.min.js'],
+    'init_template': 'djrichtextfield/init/tinymce.js',
+    'settings': {
+        'menubar': False,
+        'plugins': 'link image',
+        'toolbar': 'bold italic | link image | removeformat',
+        'width': 700
+    }
 }
