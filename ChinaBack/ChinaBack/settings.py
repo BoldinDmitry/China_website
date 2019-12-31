@@ -41,9 +41,11 @@ INSTALLED_APPS = [
 
     # Installed apps
     'rest_framework',
+    'django_filters',
 
     # My apps
-    'Quotes'
+    'Quotes',
+    'Internships'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +127,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+MEDIA_ROOT = "media"
+MEDIA_URL = "/media/"
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
