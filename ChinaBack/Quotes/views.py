@@ -1,16 +1,16 @@
+from rest_framework import viewsets
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
 from .models import Quote
 from .serializers import QuoteSerializer
 
-from rest_framework import viewsets
-
 
 class RandomQuoteView(viewsets.ReadOnlyModelViewSet):
     """
         Lists information related to the current user.
     """
+
     serializer_class = QuoteSerializer
     permission_classes = (AllowAny,)
 

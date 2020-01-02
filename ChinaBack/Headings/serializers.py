@@ -1,6 +1,6 @@
-from .models import Heading, Author
-
 from rest_framework import serializers
+
+from .models import Author, Heading
 
 
 class AuthorSerializer(serializers.ModelSerializer):

@@ -1,6 +1,6 @@
-from .models import Quote
-
 from rest_framework import serializers
+
+from .models import Quote
 
 
 class QuoteSerializer(serializers.ModelSerializer):

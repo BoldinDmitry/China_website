@@ -14,7 +14,9 @@ class News(models.Model):
     short_text = models.TextField(verbose_name="Короткий текст новости")
     text = models.TextField(verbose_name="Длиный текст")
     image = models.ImageField(upload_to="news", verbose_name="Картинка для новости")
-    tag = models.CharField(max_length=3, verbose_name="Тег новости", choices=tag_choices)
+    tag = models.CharField(
+        max_length=3, verbose_name="Тег новости", choices=tag_choices
+    )
 
     def __str__(self):
         return f"{self.pk}: {self.tag}, {self.title}"

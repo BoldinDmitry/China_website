@@ -8,10 +8,18 @@ class Internship(models.Model):
     conditions = models.TextField(verbose_name="Условия")
     rating = models.FloatField(verbose_name="Рейтинг")
 
-    image1 = models.ImageField(verbose_name="Первая картинка", blank=True, upload_to="internship_images")
-    image2 = models.ImageField(verbose_name="Вторая картинка", blank=True, upload_to="internship_images")
-    image3 = models.ImageField(verbose_name="Третья картинка", blank=True, upload_to="internship_images")
-    image4 = models.ImageField(verbose_name="Четвертая картинка", blank=True, upload_to="internship_images")
+    image1 = models.ImageField(
+        verbose_name="Первая картинка", blank=True, upload_to="internship_images"
+    )
+    image2 = models.ImageField(
+        verbose_name="Вторая картинка", blank=True, upload_to="internship_images"
+    )
+    image3 = models.ImageField(
+        verbose_name="Третья картинка", blank=True, upload_to="internship_images"
+    )
+    image4 = models.ImageField(
+        verbose_name="Четвертая картинка", blank=True, upload_to="internship_images"
+    )
 
     # Not for design
     start = models.DateField(verbose_name="Дата начала стажировки")

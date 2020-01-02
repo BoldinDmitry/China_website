@@ -24,7 +24,9 @@ class Heading(models.Model):
 
 class Image(models.Model):
     image = models.ImageField(upload_to="headings", verbose_name="Изображеие")
-    short_description = models.CharField(max_length=200, verbose_name="Короткое описание")
+    short_description = models.CharField(
+        max_length=200, verbose_name="Короткое описание"
+    )
 
     def __str__(self):
         return f"{self.id}: {self.short_description}"

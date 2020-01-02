@@ -13,37 +13,34 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from Quotes import views as quotes_views
-from Internships import views as internship_views
-from Headings import views as headings_views
-from News import views as news_views
-
-from ChinaBack import settings
-
 from django.conf.urls.static import static
-
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include, path
 from rest_framework import routers
 
+from ChinaBack import settings
+from Headings import views as headings_views
+from Internships import views as internship_views
+from News import views as news_views
+from Quotes import views as quotes_views
 
 router = routers.SimpleRouter()
 
 # Quote urls
-router.register(r'quotes/random_quote', quotes_views.RandomQuoteView, basename='Quote')
+router.register(r"quotes/random_quote", quotes_views.RandomQuoteView, basename="Quote")
 
 # Internship urls
-router.register(r'internships', internship_views.InternshipView, basename='Internship')
+router.register(r"internships", internship_views.InternshipView, basename="Internship")
 
 # Heading urls
-router.register(r'headings', headings_views.HeadingsView, basename='Heading')
-router.register(r'headings_authors', headings_views.AuthorView, basename='Author')
+router.register(r"headings", headings_views.HeadingsView, basename="Heading")
+router.register(r"headings_authors", headings_views.AuthorView, basename="Author")
 
 # News urls
-router.register(r'news', news_views.NewsView, basename='News')
+router.register(r"news", news_views.NewsView, basename="News")
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
-    path('djrichtextfield/', include('djrichtextfield.urls'))
+    path("admin/", admin.site.urls),
+    path("api/", include(router.urls)),
+    path("djrichtextfield/", include("djrichtextfield.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
