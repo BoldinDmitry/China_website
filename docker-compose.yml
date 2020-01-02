@@ -13,22 +13,25 @@ services:
     build: ./ChinaBack
     command: gunicorn ChinaBack.wsgi:application --bind 0.0.0.0:8000
     volumes:
-      - ./ChinaBack/db.sqllite3:/usr/src/ChinaBack/db.sqllite3
-      - ./ChinaBack/media:/usr/src/ChinaBack/media
+      - static_volume:/usr/src/ChinaBack/staticfiles
+      - media_volume:/usr/src/ChinaBack/mediafiles
     expose:
       - 8000
     env_file:
-      - ./.env.dev
+      - envs/.env.dev
     depends_on:
       - db
   nginx:
     build: ./nginx
     ports:
-      - 1337:80
+      - 80:80
     volumes:
-      - /media:/media
+      - static_volume:/usr/src/ChinaBack/staticfiles
+      - media_volume:/usr/src/ChinaBack/mediafiles
     depends_on:
       - web
 
 volumes:
   postgres_data:
+  static_volume:
+  media_volume:
