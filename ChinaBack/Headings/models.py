@@ -15,7 +15,7 @@ class Heading(models.Model):
     title = models.CharField(max_length=200, verbose_name="Название")
     publication_date = models.DateField(auto_now=True, verbose_name="Дата публикации")
     short_text = models.TextField(verbose_name="Короткий текст для описания")
-    text = RichTextField()
+    text = RichTextField(verbose_name="Текст статьи")
     author = models.ForeignKey(Author, on_delete=models.CASCADE, verbose_name="Автор")
 
     def __str__(self):

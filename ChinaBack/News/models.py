@@ -1,4 +1,5 @@
 from django.db import models
+from djrichtextfield.models import RichTextField
 
 
 class News(models.Model):
@@ -12,7 +13,7 @@ class News(models.Model):
     title = models.CharField(max_length=200, verbose_name="Название новости")
     publication_date = models.DateTimeField(auto_now=True)
     short_text = models.TextField(verbose_name="Короткий текст новости")
-    text = models.TextField(verbose_name="Длиный текст")
+    text = RichTextField(verbose_name="Длиный текст")
     image = models.ImageField(upload_to="news", verbose_name="Картинка для новости")
     tag = models.CharField(
         max_length=3, verbose_name="Тег новости", choices=tag_choices
