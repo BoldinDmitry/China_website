@@ -17,7 +17,15 @@ RUN pip install --upgrade pip
 COPY ./requirements.txt /usr/src/ChinaBack/requirements.txt
 RUN pip install -r requirements.txt
 
+# copy entrypoint.sh
+COPY ./entrypoint.sh /usr/src/ChinaBack/entrypoint.sh
+
+# copy media folder
+COPY ./media /usr/src/ChinaBack/media
+
 # copy project
 COPY . /usr/src/ChinaBack/
+
+# create the appropriate directories
 
 ENTRYPOINT ["/usr/src/ChinaBack/entrypoint.sh"]
