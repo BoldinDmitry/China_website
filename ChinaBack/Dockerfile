@@ -31,4 +31,4 @@ COPY . /usr/src/ChinaBack/
 RUN mkdir /usr/src/ChinaBack/mediafiles
 RUN mkdir /usr/src/ChinaBack/staticfiles
 
-ENTRYPOINT ["/usr/src/ChinaBack/entrypoint.sh"]
+ENTRYPOINT ["/usr/src/ChinaBack/_entrypoints/entrypoint.sh"]
