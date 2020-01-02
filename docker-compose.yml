@@ -1,15 +1,26 @@
 version: '3.7'
 
 services:
+  db:
+    image: postgres:12.0-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=hello_django
+      - POSTGRES_PASSWORD=hello_django
+      - POSTGRES_DB=hello_django_dev
   web:
     build: ./ChinaBack
     command: gunicorn ChinaBack.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - ./ChinaBack/db.sqllite3:/usr/src/ChinaBack/db.sqllite3
+      - ./ChinaBack/media:/usr/src/ChinaBack/media
     expose:
       - 8000
     env_file:
       - ./.env.dev
+    depends_on:
+      - db
   nginx:
     build: ./nginx
     ports:
@@ -18,3 +29,6 @@ services:
       - /media:/media
     depends_on:
       - web
+
+volumes:
+  postgres_data:
