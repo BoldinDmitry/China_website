@@ -22,13 +22,13 @@ COPY ./requirements.txt /usr/src/ChinaBack/requirements.txt
 RUN pip install -r requirements.txt
 
 # copy entrypoint.sh
-COPY ./entrypoint.sh /usr/src/ChinaBack/entrypoint.sh
+COPY _entrypoints/entrypoint.sh /usr/src/ChinaBack/entrypoint.sh
 
 # copy project
 COPY . /usr/src/ChinaBack/
 
 # create media and static folders
-RUN mkdir /usr/src/ChinaBack/media
+RUN mkdir /usr/src/ChinaBack/mediafiles
 RUN mkdir /usr/src/ChinaBack/staticfiles
 
 ENTRYPOINT ["/usr/src/ChinaBack/entrypoint.sh"]
