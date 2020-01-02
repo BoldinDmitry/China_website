@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     # My apps
     'Quotes',
     'Internships',
-    'Headings'
+    'Headings',
+    'News'
 ]
 
 MIDDLEWARE = [

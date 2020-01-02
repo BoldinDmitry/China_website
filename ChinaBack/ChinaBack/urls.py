@@ -16,6 +16,8 @@ Including another URLconf
 from Quotes import views as quotes_views
 from Internships import views as internship_views
 from Headings import views as headings_views
+from News import views as news_views
+
 from ChinaBack import settings
 
 from django.conf.urls.static import static
@@ -34,8 +36,11 @@ router.register(r'quotes/random_quote', quotes_views.RandomQuoteView, basename='
 router.register(r'internships', internship_views.InternshipView, basename='Internship')
 
 # Heading urls
-router.register(r'headings/', headings_views.HeadingsView, basename='Heading')
-router.register(r'headings_authors/', headings_views.AuthorView, basename='Author')
+router.register(r'headings', headings_views.HeadingsView, basename='Heading')
+router.register(r'headings_authors', headings_views.AuthorView, basename='Author')
+
+# News urls
+router.register(r'news', news_views.NewsView, basename='News')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
