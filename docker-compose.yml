@@ -3,9 +3,9 @@ version: '3.7'
 services:
   web:
     build: ./ChinaBack
-    command: python manage.py runserver 0.0.0.0:8080
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - ./ChinaBack/:/usr/src/app/
+      - ./ChinaBack/:/usr/src/ChinaBack/
     ports:
       - 8000:8000
     env_file:

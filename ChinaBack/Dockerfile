@@ -2,22 +2,22 @@
 FROM python:3.8.0-alpine
 
 # set work directory
-WORKDIR /usr/src/app
+WORKDIR /usr/src/ChinaBack
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
+# For Pillow
 RUN apk add --no-cache jpeg-dev zlib-dev
 RUN apk add --no-cache --virtual .build-deps build-base linux-headers
 
 # install dependencies
 RUN pip install --upgrade pip
-COPY ./requirements.txt /usr/src/app/requirements.txt
+COPY ./requirements.txt /usr/src/ChinaBack/requirements.txt
 RUN pip install -r requirements.txt
 
 # copy project
-COPY ./ChinaBack /usr/src/app/
+COPY . /usr/src/ChinaBack/
 
-# run entrypoint.sh
-ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
+ENTRYPOINT ["/usr/src/ChinaBack/entrypoint.sh"]
