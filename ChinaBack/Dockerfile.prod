@@ -28,7 +28,7 @@ COPY _entrypoints/entrypoint.sh /usr/src/ChinaBack/_entrypoints/entrypoint.prod.
 COPY . /usr/src/ChinaBack/
 
 # create media and static folders
-RUN mkdir /usr/src/ChinaBack/mediafiles
-RUN mkdir /usr/src/ChinaBack/staticfiles
+RUN mkdir -p /usr/src/ChinaBack/mediafiles
+RUN mkdir -p /usr/src/ChinaBack/staticfiles
 
 ENTRYPOINT ["/usr/src/ChinaBack/_entrypoints/entrypoint.prod.sh"]
