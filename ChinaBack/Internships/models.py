@@ -7,6 +7,7 @@ class Internship(models.Model):
     place = models.TextField(verbose_name="Где?")
     conditions = models.TextField(verbose_name="Условия")
     rating = models.FloatField(verbose_name="Рейтинг")
+    description = models.TextField(verbose_name="Описание")
 
     image1 = models.ImageField(
         verbose_name="Первая картинка", blank=True, upload_to="internship_images"

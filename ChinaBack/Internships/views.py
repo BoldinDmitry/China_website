@@ -15,6 +15,7 @@ class InternshipView(viewsets.ReadOnlyModelViewSet):
         "place",
         "conditions",
         "rating",
+        "description",
         "start",
         "end",
     ]
