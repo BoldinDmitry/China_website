@@ -5,6 +5,8 @@ class Internship(models.Model):
     name = models.CharField(max_length=200, verbose_name="Название стажировки")
     time = models.TextField(verbose_name="Когда?")
     place = models.TextField(verbose_name="Где?")
+    city = models.CharField(verbose_name="Город", max_length=50, default="")
+    organization = models.TextField(verbose_name="Организация", default="")
     conditions = models.TextField(verbose_name="Условия")
     rating = models.FloatField(verbose_name="Рейтинг")
     description = models.TextField(verbose_name="Описание")
