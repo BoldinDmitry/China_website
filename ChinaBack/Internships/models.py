@@ -12,7 +12,7 @@ class Internship(models.Model):
     description = models.TextField(verbose_name="Описание")
 
     image1 = models.ImageField(
-        verbose_name="Первая картинка", blank=True, upload_to="internship_images"
+        verbose_name="Первая картинка", upload_to="internship_images"
     )
     image2 = models.ImageField(
         verbose_name="Вторая картинка", blank=True, upload_to="internship_images"
