@@ -26,6 +26,7 @@ COPY _entrypoints/entrypoint.sh /usr/src/ChinaBack/entrypoint.sh
 
 # copy project
 COPY . /usr/src/ChinaBack/
+COPY frontend/build /usr/src/ChinaBack/frontend/build/
 
 # create media and static folders
 RUN mkdir -p /usr/src/ChinaBack/mediafiles
