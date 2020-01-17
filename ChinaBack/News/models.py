@@ -8,6 +8,15 @@ class News(models.Model):
         ("eco", "Экономика"),
         ("cul", "Культура"),
         ("peo", "Люди"),
+        ("arc", "Архитектура"),
+        ("lit", "Литература"),
+        ("art", "Живопись"),
+        ("cin", "Кино"),
+        ("inf", "О китайцах"),
+        ("how", "Как они думают?"),
+        ("svn", "Юг и Сервер"),
+        ("dis", "Непонимание"),
+        ("tri", "Путешествие по Китаю")
     )
 
     title = models.CharField(max_length=200, verbose_name="Название новости")
@@ -21,3 +30,6 @@ class News(models.Model):
 
     def __str__(self):
         return f"{self.pk}: {self.tag}, {self.title}"
+
+    class Meta:
+        verbose_name = "Article"
