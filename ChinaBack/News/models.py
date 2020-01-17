@@ -16,6 +16,7 @@ class News(models.Model):
         ("how", "Как они думают?"),
         ("svn", "Юг и Сервер"),
         ("dis", "Непонимание"),
+        ("tri", "Путешествие по Китаю")
     )
 
     title = models.CharField(max_length=200, verbose_name="Название новости")
