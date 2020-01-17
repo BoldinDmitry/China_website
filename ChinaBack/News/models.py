@@ -8,6 +8,10 @@ class News(models.Model):
         ("eco", "Экономика"),
         ("cul", "Культура"),
         ("peo", "Люди"),
+        ("arc", "Архитектура"),
+        ("lit", "Литература"),
+        ("art", "Живопись"),
+        ("cin", "Кино"),
     )
 
     title = models.CharField(max_length=200, verbose_name="Название новости")
