@@ -4,10 +4,6 @@
 
 This is code of web-site about China.
 
-  - Type some Markdown on the left
-  - See HTML in the right
-  - Magic
-
 # Backend and deploy part
 In backend this web-site uses Django Rest Framework.
 Also for deploy is uses:
@@ -20,5 +16,3 @@ There are 4 apps:
   - Internships
   - Headings
   - News
-
-UML diagram of this app: 
