@@ -6,7 +6,7 @@ Click==7.0
 Django==3.0.7
 django-filter==2.2.0
 django-richtextfield==1.5.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 isort==4.3.21
 pathspec==0.7.0
 Pillow==6.2.1
